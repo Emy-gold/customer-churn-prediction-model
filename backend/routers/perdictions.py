@@ -1,8 +1,11 @@
 from fastapi import APIRouter
 from schemas.customer import CustomerData
+from services.prediction_service import predict_churn
 
 router = APIRouter()
 
 @router.post("/predict")
 def predict(customer: CustomerData):
-    pass
+    customer_data = customer.model_dump()
+    result = predict_churn(customer_data)
+    return result
