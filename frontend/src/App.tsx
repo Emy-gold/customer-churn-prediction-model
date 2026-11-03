@@ -1,8 +1,11 @@
+import CustomerForm from "./containers/Customer";
+
 function App() {
    
   return <div>
-
-    <h1>Hello world</h1>
+    <CustomerForm onSubmit={function (): void {
+      throw new Error("Function not implemented.");
+    } }/>
   </div>;
 }
 
