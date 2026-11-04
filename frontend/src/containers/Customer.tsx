@@ -1,3 +1,5 @@
+import "../App.css"
+
 interface CustomerFormProps {
   onSubmit: () => void;
 }
@@ -10,11 +12,13 @@ function CustomerForm({ onSubmit }: CustomerFormProps) {
         onSubmit();
       }}
     >
-      <h2>Customer Information</h2>
+      <div className="flex flex-col justify-center items-center">
+        <h1 className="text-pink-100 text-2xl font-bold">Customer Information</h1>
+        <button type="submit">
+          Predict Churn
+        </button>
+      </div>
 
-      <button type="submit">
-        Predict Churn
-      </button>
     </form>
   );
 }

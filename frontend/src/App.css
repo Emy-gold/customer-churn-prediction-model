@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+@keyframes spin-slow {
+    from {transform: rotate(0deg);}
+    to { transform: rotate(360deg);}
+}
+
+.animat-spin-slow {
+    animation: spin-slow 4s linear infinite;
+}
+
+#root {
+    width: 100%;
+    min-height: 100%;
+}
+/* Dynamic background reacting to mouse*/
+.bg-mesh {
+    background-color: #020617;
+    background-image: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(56, 189,248, 0.15) 0%,
+        transparent 35%
+    );
+}
