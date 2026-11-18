@@ -2,7 +2,7 @@
 import "../App.css";
 import { BrainCircuit, ArrowRight } from "lucide-react";
 import { useState } from "react";
-import type { CustomerData } from "../prediction/types/prediction";
+import type { CustomerData } from "../types/prediction";
 
 interface CustomerFormProps {
   onSubmit: (customer: CustomerData) => void;

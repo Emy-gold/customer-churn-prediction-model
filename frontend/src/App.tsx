@@ -1,4 +1,4 @@
-import CustomerForm from "./features/components/Customer";
+import CustomerForm from "./features/prediction/components/Customer";
 import "./App.css"
 
 function App() {
