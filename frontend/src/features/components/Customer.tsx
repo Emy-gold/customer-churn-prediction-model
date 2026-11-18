@@ -2,7 +2,7 @@
 import "../App.css";
 import { BrainCircuit, ArrowRight } from "lucide-react";
 import { useState } from "react";
-import type { CustomerData } from "../features/prediction/types/prediction";
+import type { CustomerData } from "../prediction/types/prediction";
 
 interface CustomerFormProps {
   onSubmit: (customer: CustomerData) => void;
@@ -43,7 +43,7 @@ function CustomerForm({ onSubmit }: CustomerFormProps) {
               Customer Details
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Credit Score */}
               <div className="flex flex-col gap-2">
                 <label className="text-slate-300" htmlFor="CreditScore">

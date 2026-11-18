@@ -1,4 +1,4 @@
-import CustomerForm from "./containers/Customer";
+import CustomerForm from "./features/components/Customer";
 import "./App.css"
 
 function App() {
