@@ -12,7 +12,12 @@
 #root {
     width: 100%;
     min-height: 100%;
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  overflow-x: hidden;
 }
 /* Dynamic background reacting to mouse*/
 .bg-mesh {
