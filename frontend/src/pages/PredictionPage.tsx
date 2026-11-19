@@ -32,7 +32,7 @@ function PredictionPage() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-mesh">
+    <div className="min-h-screen w-full bg">
       <CustomerForm onSubmit={handlePrediction} />
 
       {loading && (
