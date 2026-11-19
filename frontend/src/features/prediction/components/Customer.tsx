@@ -1,5 +1,5 @@
 
-import "../App.css";
+import "/src/App.css";
 import { BrainCircuit, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import type { CustomerData } from "../types/prediction";
