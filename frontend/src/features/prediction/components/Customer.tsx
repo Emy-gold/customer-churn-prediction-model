@@ -31,7 +31,7 @@ function CustomerForm({ onSubmit }: CustomerFormProps) {
         onSubmit(formData);
       }}
     >
-      <div className="flex flex-col justify-center items-center p-4">
+      <div className="min-h-screen w-full flex flex-col justify-center items-center p-4">
         <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold bg-gradient-to-r from-indigo-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent pb-6 relative">
           Customer Information
         </h1>

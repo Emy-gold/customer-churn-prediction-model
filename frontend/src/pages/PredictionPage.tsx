@@ -3,16 +3,15 @@ import { useState } from "react";
 
 import CustomerForm from "../features/prediction/components/Customer";
 import { prediction } from "../features/prediction/services/predictionService";
-import PredictionResult from "../features/prediction/components/PredictionResult";
+
 import { useNavigate } from "react-router-dom";
 
 import type {
   CustomerData,
-  PredictionResponse,
+
 } from "../features/prediction/types/prediction";
 
 function PredictionPage() {
-  const [result, setResult] = useState<PredictionResponse | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
@@ -21,7 +20,6 @@ function PredictionPage() {
     try {
       setLoading(true);
       setError(null);
-      setResult(null);
 
       const pred = await prediction(customerData);
 
@@ -37,7 +35,7 @@ function PredictionPage() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-mesh">
+    <div className="min-h-screen w-full relative z-10">
       <CustomerForm onSubmit={handlePrediction} />
 
       {loading && (
@@ -52,9 +50,6 @@ function PredictionPage() {
         </p>
       )}
 
-      {result && (
-        <PredictionResult result={result} />
-      )}
     </div>
   );
 }
