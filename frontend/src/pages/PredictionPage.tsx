@@ -4,6 +4,7 @@ import { useState } from "react";
 import CustomerForm from "../features/prediction/components/Customer";
 import { prediction } from "../features/prediction/services/predictionService";
 import PredictionResult from "../features/prediction/components/PredictionResult";
+import { useNavigate } from "react-router-dom";
 
 import type {
   CustomerData,
@@ -14,6 +15,7 @@ function PredictionPage() {
   const [result, setResult] = useState<PredictionResponse | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   const handlePrediction = async (customerData: CustomerData) => {
     try {
@@ -23,7 +25,9 @@ function PredictionPage() {
 
       const pred = await prediction(customerData);
 
-      setResult(pred);
+      navigate("/result", {
+        state: { result: pred },
+      });
     } catch (error) {
       console.error("Prediction error:", error);
       setError("Unable to make prediction. Please try again.");
