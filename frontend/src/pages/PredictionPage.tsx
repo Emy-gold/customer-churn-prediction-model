@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import CustomerForm from "../features/prediction/components/Customer";
 import { prediction } from "../features/prediction/services/predictionService";
+import PredictionResult from "../features/prediction/components/PredictionResult";
 
 import type {
   CustomerData,
@@ -32,7 +33,7 @@ function PredictionPage() {
   };
 
   return (
-    <div className="min-h-screen w-full bg">
+    <div className="min-h-screen w-full bg-mesh">
       <CustomerForm onSubmit={handlePrediction} />
 
       {loading && (
@@ -48,20 +49,7 @@ function PredictionPage() {
       )}
 
       {result && (
-        <div className="text-center mt-8 text-white">
-          <h2 className="text-2xl font-bold">
-            Prediction Result
-          </h2>
-
-          <p className="mt-3">
-            {result.label}
-          </p>
-
-          <p>
-            Churn Probability:{" "}
-            {(result.churn_probability * 100).toFixed(2)}%
-          </p>
-        </div>
+        <PredictionResult result={result} />
       )}
     </div>
   );
