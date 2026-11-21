@@ -78,6 +78,35 @@ function ResultPage() {
         >
           {riskLevel}
         </h2>
+
+        
+      <p className="text-slate-400 text-center mt-4 max-w-xl mx-auto leading-relaxed">
+        {probability < 0.30
+          ? "This customer has a relatively low estimated likelihood of leaving the bank."
+          : probability < 0.60
+          ? "This customer has a moderate estimated likelihood of leaving the bank. Monitoring their engagement may be useful."
+          : "This customer has a high estimated likelihood of leaving the bank. Consider reviewing their experience and engagement."}
+      </p>
+
+      <div className="mt-8 p-5 rounded-xl bg-slate-800/60 border border-slate-700/60">
+        <p className="text-slate-400 text-sm mb-2">
+          Model Prediction
+        </p>
+
+        <p className={`text-xl font-bold ${
+          result.prediction === 1
+            ? "text-red-400"
+            : "text-emerald-400"
+        }`}>
+          {result.prediction === 1
+            ? "Likely to Churn"
+            : "Likely to Stay"}
+        </p>
+
+        <p className="text-slate-400 text-sm mt-3">
+          Decision Threshold: {(result.threshold * 100).toFixed(0)}%
+        </p>
+      </div>
       </div>
 
     </div>
